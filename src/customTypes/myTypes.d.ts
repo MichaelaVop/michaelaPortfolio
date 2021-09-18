@@ -5,6 +5,7 @@ declare module 'myTypes' {
         title: string,
         desc: string,
         techDesc: string,
+        hide: function,
     }
 
 

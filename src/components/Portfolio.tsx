@@ -1,7 +1,7 @@
 import React from "react"
 import { useState } from "react"
-import data from "./data"
-import Modal from "./Modal"
+import data from "./modalAndData/data"
+import Modal from "./modalAndData/Modal"
 
 
 const Portfolio = () => {
@@ -14,7 +14,7 @@ const Portfolio = () => {
         setTempData([ ...tempData])
         console.log(tempData)
 
-        setModalOpen(true)
+        return setModalOpen(true)
        
     }
 
@@ -45,7 +45,7 @@ const Portfolio = () => {
         </div>
 
         <div>
-            {modalOpen === true ? <Modal title={tempData[1]} desc={tempData[2]} techDesc={tempData[3]} /> : ''}
+            {modalOpen === true ? <Modal title={tempData[0]} desc={tempData[1]} techDesc={tempData[2]} hide={() => setModalOpen(false)} /> : ''}
             
         </div>
 
