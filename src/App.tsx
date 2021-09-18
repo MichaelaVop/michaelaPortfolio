@@ -6,6 +6,7 @@ import NavigationBar from './components/NavigationBar';
 import Portfolio from './components/Portfolio';
 
 import './App.css'
+import Modal from './components/Modal';
 
 
 function App() {
@@ -40,7 +41,7 @@ function App() {
       <Header />
       <About />
       <Portfolio />
-     
+      {/* <Modal title='tempData[1]' desc='tempData[2]' techDesc='tempData[3]' />  */}
       <Contact />
       <Footer />
 
