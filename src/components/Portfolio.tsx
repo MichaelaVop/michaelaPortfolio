@@ -20,7 +20,7 @@ const Portfolio = () => {
 
     return (
         <>
-        <div>
+        <div id='portfolio'>
             <div className="HL2">
             <h2>Portfolio</h2>
             </div>

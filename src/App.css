@@ -1,104 +1,162 @@
 .App {
   text-align: center;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Karla", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+p,
+a {
+  font-family: "Montserrat", sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+li {
+  list-style: none;
 }
 
-.App-link {
-  color: #61dafb;
+a {
+  text-decoration: none;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
 
 .projectImg {
   max-width: 30vw;
 }
 
-.modal {
+/* ------------------------------ */
+/* ---------- Nav Bar ----------- */
+/* ------------------------------ */
+nav {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  transition: 200ms ease-in-out;
-  border: 1px solid black;
-  border-radius: 10px;
-  z-index: 10;
-  background-color: white;
-  width: 500px;
-  max-width: 80%;
-}
-
-.modal.active {
-  transform: translate(-50%, -50%) scale(1);
-}
-
-.modal-header {
-  padding: 10px 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid black;
-}
-
-.modal-header .title {
-  font-size: 1.25rem;
-  font-weight: bold;
-}
-
-.modal-header .close-button {
-  cursor: pointer;
-  border: none;
-  outline: none;
-  background: none;
-  font-size: 1.25rem;
-  font-weight: bold;
-}
-
-.modal-body {
-  padding: 10px 15px;
-}
-
-.overlay {
-  position: fixed;
-  opacity: 0;
-  transition: 200ms ease-in-out;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  pointer-events: none;
+  z-index: 99;
+  background-color: #002a32;
+  color: #f6f1ed;
 }
 
-#overlay.active {
-  opacity: 1;
-  pointer-events: all;
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
 }
+.navContainer img {
+  color: #f6f1ed;
+  max-width: 50vw;
+  height: 100%;
+  padding-left: 0;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+.navContainer .icon-burger {
+  display: block;
+  position: relative;
+  z-index: 1;
+  background-color: #002a32;
+  user-select: none;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  padding-right: 15px;
+}
+.navContainer .icon-burger .line {
+  display: block;
+  width: 30px;
+  height: 4px;
+  margin: 5px;
+  position: relative;
+  z-index: 1;
+  background-color: #f6f1ed;
+  transform-origin: 0 0;
+  transition: 0.4s;
+}
+.navContainer .icon-burger:hover span:nth-child(2) {
+  transform: translateX(-8px);
+  background-color: #bf3e52;
+}
+.navContainer .icon-burger.is-active span:nth-child(1) {
+  transform: translate(1px, -2px) rotate(45deg);
+}
+.navContainer .icon-burger.is-active span:nth-child(3) {
+  transform: translate(-1px, 2px) rotate(-45deg);
+}
+.navContainer .icon-burger.is-active span:nth-child(2) {
+  opacity: 0;
+}
+.navContainer .links {
+  display: none;
+  justify-content: flex-end;
+}
+.navContainer .links a {
+  margin: 0 16px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #f6f1ed;
+  text-decoration: none;
+}
+.navContainer .links a:hover {
+  color: #bf3e52;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .navContainer .icon-burger {
+    display: none;
+  }
+  .navContainer img {
+    max-width: 30vw;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .navContainer .links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+@media (min-width: 1024px) {
+  .navContainer {
+    padding: 0 1.5rem;
+  }
+  .navContainer img {
+    max-width: 22vw;
+  }
+}
+@media (min-width: 1440px) {
+  .navContainer {
+    padding: 0 3rem;
+  }
+  .navContainer img {
+    max-width: 20vw;
+  }
+  .navContainer .links li {
+    padding: 0 0.5rem;
+  }
+  .navContainer .links a {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 2040px) {
+  .navContainer {
+    padding: 0 8rem;
+  }
+  .navContainer img {
+    width: 90%;
+  }
+  .navContainer .links li {
+    padding: 0 1rem;
+  }
+  .navContainer .links a {
+    font-size: 2.8rem;
+  }
+}
+
+/*# sourceMappingURL=App.css.map */
