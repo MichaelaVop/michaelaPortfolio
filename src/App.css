@@ -77,18 +77,15 @@ nav {
   background-color: #f6f1ed;
   transform-origin: 0 0;
   transition: 0.4s;
+  transition: all 0.3s ease-in-out;
 }
-.navContainer .icon-burger:hover span:nth-child(2) {
-  transform: translateX(-8px);
-  background-color: #bf3e52;
-}
-.navContainer .icon-burger.is-active span:nth-child(1) {
+.navContainer .icon-burger#isActive span:nth-child(1) {
   transform: translate(1px, -2px) rotate(45deg);
 }
-.navContainer .icon-burger.is-active span:nth-child(3) {
+.navContainer .icon-burger#isActive span:nth-child(3) {
   transform: translate(-1px, 2px) rotate(-45deg);
 }
-.navContainer .icon-burger.is-active span:nth-child(2) {
+.navContainer .icon-burger#isActive span:nth-child(2) {
   opacity: 0;
 }
 .navContainer .links {
@@ -107,6 +104,26 @@ nav {
   cursor: pointer;
 }
 
+@media (max-width: 767px) {
+  .links#isActive {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 40vh;
+    justify-content: space-evenly;
+    position: fixed;
+    z-index: 9;
+    top: 30px;
+    padding-top: 0.2rem;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: display 20s ease-in-out;
+  }
+  .links#isActive li a {
+    font-size: 16px;
+    padding: 1em;
+  }
+}
 @media (min-width: 768px) {
   .navContainer .icon-burger {
     display: none;
