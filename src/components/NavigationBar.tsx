@@ -2,8 +2,7 @@ import { useState } from "react";
 
 const NavigationBar = () => {
     const [burgerIsActive, setBurgerIsActive] = useState(false)
-    const [showMenu, setShowMenur] = useState(false); 
-
+   
     return (
        
 
